@@ -40,7 +40,7 @@
 	</build>
 
 	<scm>
-		<developerConnection>scm:git:git@github.com:visitkoushik/petclinic.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/visitkoushik/petclinic.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm> 
 </project>
