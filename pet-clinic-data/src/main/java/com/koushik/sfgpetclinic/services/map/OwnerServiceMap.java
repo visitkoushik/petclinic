@@ -1,10 +1,10 @@
 package com.koushik.sfgpetclinic.services.map;
 
-import com.koushik.sfgpetclinic.model.Owner;
-import com.koushik.sfgpetclinic.services.CrudService;
+import com.koushik.sfgpetclinic.model.Owner; 
+import com.koushik.sfgpetclinic.services.OwenerService;
 
 public class OwnerServiceMap extends AbstructMapService<Owner, Long> 
-implements CrudService<Owner,Long>{
+implements OwenerService{
 
     @Override
     public Owner findById(Long id) {
@@ -25,7 +25,12 @@ implements CrudService<Owner,Long>{
     public void deleteById(Long id) {
         super.deleteById(id);
     }
-    
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
 
 }

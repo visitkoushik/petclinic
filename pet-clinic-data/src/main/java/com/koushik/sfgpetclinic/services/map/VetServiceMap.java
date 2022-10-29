@@ -1,10 +1,10 @@
 package com.koushik.sfgpetclinic.services.map;
 
-import com.koushik.sfgpetclinic.model.Vet;
-import com.koushik.sfgpetclinic.services.CrudService;
+import com.koushik.sfgpetclinic.model.Vet; 
+import com.koushik.sfgpetclinic.services.VetService;
 
 public class VetServiceMap extends AbstructMapService<Vet, Long> 
-implements CrudService<Vet,Long>{
+implements VetService{
 
     @Override
     public Vet findById(Long id) {
