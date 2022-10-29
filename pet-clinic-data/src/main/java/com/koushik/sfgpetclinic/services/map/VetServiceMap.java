@@ -16,7 +16,7 @@ implements VetService{
 
     @Override
     public Vet save(Vet Vet) {
-        return super.save(Vet.getId(), Vet);
+        return super.save(Vet);
     }
 
     @Override

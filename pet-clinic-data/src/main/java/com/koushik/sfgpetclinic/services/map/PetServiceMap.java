@@ -13,7 +13,7 @@ implements CrudService<Pet,Long>{
 
     @Override
     public Pet save(Pet Pet) {
-        return super.save(Pet.getId(), Pet);
+        return super.save(Pet);
     }
 
     @Override
