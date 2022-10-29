@@ -1,14 +1,13 @@
 package com.koushik.sfgpetclinic.bootstrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.koushik.sfgpetclinic.model.Owner;
 import com.koushik.sfgpetclinic.model.Vet;
 import com.koushik.sfgpetclinic.services.OwenerService;
-import com.koushik.sfgpetclinic.services.VetService;
-import com.koushik.sfgpetclinic.services.map.OwnerServiceMap;
-import com.koushik.sfgpetclinic.services.map.VetServiceMap;
+import com.koushik.sfgpetclinic.services.VetService; 
 
 
 @Component
@@ -21,9 +20,10 @@ public class DataLoader implements CommandLineRunner{
     /**
      * 
      */
-    public DataLoader() {
-        owenerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    @Autowired// Not reuired aft spring 4.2
+    public DataLoader(OwenerService owenerService,VetService vetService) {
+        this.owenerService = owenerService;
+        this.vetService =vetService;
     }
 
 

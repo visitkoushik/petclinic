@@ -1,8 +1,12 @@
 package com.koushik.sfgpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
+
 import com.koushik.sfgpetclinic.model.Owner; 
 import com.koushik.sfgpetclinic.services.OwenerService;
 
+
+@Service
 public class OwnerServiceMap extends AbstructMapService<Owner, Long> 
 implements OwenerService{
 
