@@ -5,8 +5,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.koushik.sfgpetclinic.model.Owner;
+import com.koushik.sfgpetclinic.model.PetType;
 import com.koushik.sfgpetclinic.model.Vet;
 import com.koushik.sfgpetclinic.services.OwenerService;
+import com.koushik.sfgpetclinic.services.PetTypeService;
 import com.koushik.sfgpetclinic.services.VetService; 
 
 
@@ -16,25 +18,37 @@ public class DataLoader implements CommandLineRunner{
 
     private final OwenerService owenerService;
     private final VetService vetService;
-
+    private final PetTypeService petTypeService;
     /**
      * 
      */
     @Autowired// Not reuired aft spring 4.2
-    public DataLoader(OwenerService owenerService,VetService vetService) {
-        this.owenerService = owenerService;
-        this.vetService =vetService;
+    public DataLoader(
+        OwenerService owenerService,
+        VetService vetService,
+        PetTypeService petTypeService) {
+            this.owenerService = owenerService;
+            this.vetService = vetService;
+            this.petTypeService = petTypeService;
     }
 
 
     @Override
     public void run(String... args) throws Exception {
         
-        
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType dogPetType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+        PetType catPetType = petTypeService.save(cat);
+
         Owner owner1 = new Owner();
         // owner1.setId(1L);
         owner1.setFirstName("Koushik");
         owner1.setLastName("Majumder");
+        
         owenerService.save(owner1);
 
         Owner owner2 = new Owner();

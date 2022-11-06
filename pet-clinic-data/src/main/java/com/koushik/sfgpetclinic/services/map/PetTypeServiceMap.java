@@ -1,10 +1,13 @@
 package com.koushik.sfgpetclinic.services.map;
 
-import com.koushik.sfgpetclinic.model.PetType;
-import com.koushik.sfgpetclinic.services.CrudService;
+import org.springframework.stereotype.Service;
 
+import com.koushik.sfgpetclinic.model.PetType;
+import com.koushik.sfgpetclinic.services.PetTypeService;
+
+@Service
 public class PetTypeServiceMap extends AbstructMapService<PetType,Long> 
-implements CrudService<PetType,Long>{
+implements PetTypeService{
     
 
     @Override

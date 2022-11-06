@@ -1,10 +1,10 @@
 package com.koushik.sfgpetclinic.services.map;
 
-import com.koushik.sfgpetclinic.model.Pet;
-import com.koushik.sfgpetclinic.services.CrudService;
+import com.koushik.sfgpetclinic.model.Pet; 
+import com.koushik.sfgpetclinic.services.PetService;
 
 public class PetServiceMap extends AbstructMapService<Pet, Long> 
-implements CrudService<Pet,Long>{
+implements PetService{
 
     @Override
     public Pet findById(Long id) {
