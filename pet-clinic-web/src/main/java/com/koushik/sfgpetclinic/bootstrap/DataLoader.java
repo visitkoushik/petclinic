@@ -9,9 +9,11 @@ import org.springframework.stereotype.Component;
 import com.koushik.sfgpetclinic.model.Owner;
 import com.koushik.sfgpetclinic.model.Pet;
 import com.koushik.sfgpetclinic.model.PetType;
+import com.koushik.sfgpetclinic.model.Speciality;
 import com.koushik.sfgpetclinic.model.Vet;
 import com.koushik.sfgpetclinic.services.OwenerService;
 import com.koushik.sfgpetclinic.services.PetTypeService;
+import com.koushik.sfgpetclinic.services.SpecialityService;
 import com.koushik.sfgpetclinic.services.VetService; 
 
 
@@ -22,6 +24,7 @@ public class DataLoader implements CommandLineRunner{
     private final OwenerService owenerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final SpecialityService specialityService;
     /**
      * 
      */
@@ -29,10 +32,12 @@ public class DataLoader implements CommandLineRunner{
     public DataLoader(
         OwenerService owenerService,
         VetService vetService,
-        PetTypeService petTypeService) {
+        PetTypeService petTypeService,
+        SpecialityService specialityService) {
             this.owenerService = owenerService;
             this.vetService = vetService;
             this.petTypeService = petTypeService;
+            this.specialityService = specialityService;
     }
 
 
@@ -48,12 +53,26 @@ public class DataLoader implements CommandLineRunner{
         PetType catPetType = petTypeService.save(cat);
 
 
+
+        Speciality speciality1 = new Speciality();
+        speciality1.setDescription("Radiology");
+        Speciality radioLogy = specialityService.save(speciality1);
+
+        Speciality speciality2 = new Speciality();
+        speciality2.setDescription("Dentistry");
+        Speciality dentistry = specialityService.save(speciality2);
+
+        Speciality speciality3 = new Speciality();
+        speciality3.setDescription("Surgery");
+        Speciality surgery = specialityService.save(speciality3);
+
+
         Pet petCat = new Pet();
-        petCat.setPetType(cat);
+        petCat.setPetType(catPetType);
         petCat.setName("Mao");
         petCat.setBirthDay(LocalDate.now());
         Pet petDog = new Pet();
-        petDog .setPetType(dog);
+        petDog .setPetType(dogPetType);
         petDog .setName("BhouBhou");
         petDog.setBirthDay(LocalDate.of(2019, 3, 12));
 
@@ -77,13 +96,16 @@ public class DataLoader implements CommandLineRunner{
         // vet1.setId(1L);
         vet1.setFirstName("Pooja");
         vet1.setLastName("Dey");
+        vet1.getSpecialities().add(radioLogy);
+        vet1.getSpecialities().add(surgery);
         vetService.save(vet1);
 
         Vet vet2 =new Vet();
         // vet2.setId(2L);
         vet2.setFirstName("Pooja");
         vet2.setLastName("Kaberia");
-
+        vet2.getSpecialities().add(dentistry);
+        vet2.getSpecialities().add(surgery);
         vetService.save(vet2);
 
         System.out.println("Loaded Vet");

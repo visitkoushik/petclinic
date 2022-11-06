@@ -16,8 +16,8 @@ public class Owner extends Person {
     public List<String> getAllPetsName(){
         List<String> aList = new ArrayList<String>(pets.size());
 
-        pets.forEach(pets->{
-            aList.add(pets.getName());
+        pets.forEach(pet->{
+            aList.add(pet.getName()+"-"+pet.getPetType().getName());
         });
 
         return aList;
