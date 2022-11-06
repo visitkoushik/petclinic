@@ -1,10 +1,13 @@
 package com.koushik.sfgpetclinic.bootstrap;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.koushik.sfgpetclinic.model.Owner;
+import com.koushik.sfgpetclinic.model.Pet;
 import com.koushik.sfgpetclinic.model.PetType;
 import com.koushik.sfgpetclinic.model.Vet;
 import com.koushik.sfgpetclinic.services.OwenerService;
@@ -44,17 +47,28 @@ public class DataLoader implements CommandLineRunner{
         cat.setName("Cat");
         PetType catPetType = petTypeService.save(cat);
 
+
+        Pet petCat = new Pet();
+        petCat.setPetType(cat);
+        petCat.setName("Mao");
+        petCat.setBirthDay(LocalDate.now());
+        Pet petDog = new Pet();
+        petDog .setPetType(dog);
+        petDog .setName("BhouBhou");
+        petDog.setBirthDay(LocalDate.of(2019, 3, 12));
+
         Owner owner1 = new Owner();
         // owner1.setId(1L);
         owner1.setFirstName("Koushik");
         owner1.setLastName("Majumder");
-        
+        owner1.getPets().add(petCat);
         owenerService.save(owner1);
 
         Owner owner2 = new Owner();
         // owner2.setId(2L);
         owner2.setFirstName("Kuntal");
         owner2.setLastName("Chakraborty");
+        owner2.getPets().add(petDog);
         owenerService.save(owner2);
 
         System.out.println("Loaded Owner");

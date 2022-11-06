@@ -2,25 +2,24 @@ package com.koushik.sfgpetclinic.services.map;
 
 import org.springframework.stereotype.Service;
 
-import com.koushik.sfgpetclinic.model.Pet; 
-import com.koushik.sfgpetclinic.services.PetService;
+import com.koushik.sfgpetclinic.model.Speciality;
+import com.koushik.sfgpetclinic.services.SpecialityService;
 
 @Service
-public class PetServiceMap extends AbstructMapService<Pet, Long> 
-implements PetService{
-
+public class SpecialityMapService extends AbstructMapService<Speciality,Long> 
+implements SpecialityService{
     @Override
-    public Pet findById(Long id) {
+    public Speciality findById(Long id) {
         return this.findById(id);
     }
 
     @Override
-    public Pet save(Pet Pet) {
+    public Speciality save(Speciality Pet) {
         return super.save(Pet);
     }
 
     @Override
-    public void delete(Pet Pet) {
+    public void delete(Speciality Pet) {
         super.delete(Pet);
     }
 
@@ -28,7 +27,4 @@ implements PetService{
     public void deleteById(Long id) {
         super.deleteById(id);
     }
-    
-
-    
 }

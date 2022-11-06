@@ -2,13 +2,28 @@ package com.koushik.sfgpetclinic.services.map;
 
 import org.springframework.stereotype.Service;
 
-import com.koushik.sfgpetclinic.model.Owner; 
+import com.koushik.sfgpetclinic.model.Owner;
+import com.koushik.sfgpetclinic.model.Pet;
 import com.koushik.sfgpetclinic.services.OwenerService;
+import com.koushik.sfgpetclinic.services.PetService;
+import com.koushik.sfgpetclinic.services.PetTypeService;
 
 
 @Service
 public class OwnerServiceMap extends AbstructMapService<Owner, Long> 
 implements OwenerService{
+
+    private final PetTypeService petTypeService;
+    private final PetService petService;
+
+
+
+
+
+    public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
+        this.petTypeService = petTypeService;
+        this.petService = petService;
+    }
 
     @Override
     public Owner findById(Long id) {
@@ -17,7 +32,30 @@ implements OwenerService{
 
     @Override
     public Owner save(Owner owner) {
-        return super.save(owner);
+
+        if(owner!=null){
+            if(owner.getPets()!=null){
+                owner.getPets().forEach(pet->{
+                    if(pet.getId()!=null){
+                        Pet savedpet = petService.save(pet);
+                        pet.setId(savedpet.getId());
+                    }
+                    if(pet.getPetType()!=null){
+                        if(pet.getPetType().getId()!=null){
+                            pet.setPetType(petTypeService.save(pet.getPetType()));
+                        }
+                    }else{
+                        throw new RuntimeException("Pet type missing");
+                    }
+
+                    
+                });
+            }
+            return super.save(owner);
+        }
+        else{
+            return null;
+        }
     }
 
     @Override

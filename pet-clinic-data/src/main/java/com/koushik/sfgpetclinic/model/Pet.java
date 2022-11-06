@@ -8,11 +8,17 @@ public class Pet extends BaseEntity {
 
     private PetType petType;
     private Owner owner;
-
+    private String name;
     @DateTimeFormat(pattern = "dd-MMM-yy")
     private LocalDate birthDay;
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
     public PetType getPetType() {
         return this.petType;
     }
