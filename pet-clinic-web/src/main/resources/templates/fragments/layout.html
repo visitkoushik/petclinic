@@ -45,17 +45,17 @@
 
         <ul class="nav navbar-nav me-auto">
 
-          <li th:replace="~{::menuItem ('/','home','home page','home','Home')}">
+          <li th:replace="~{::menuItem ('','home','home page','home','Home')}">
             <span class="fa fa-home" aria-hidden="true"></span>
             <span>Home</span>
           </li>
 
-          <li th:replace="~{::menuItem ('owners','/owners/find','find owners','search','Find owners')}">
+          <li th:replace="~{::menuItem ('owners','owners','find owners','search','Owners')}">
             <span class="fa fa-search" aria-hidden="true"></span>
-            <span>Find owners</span>
+            <span>Owners</span>
           </li>
 
-          <li th:replace="~{::menuItem ('/vets.html','vets','veterinarians','th-list','Veterinarians')}">
+          <li th:replace="~{::menuItem ('vets','vets','veterinarians','th-list','Veterinarians')}">
             <span class="fa fa-th-list" aria-hidden="true"></span>
             <span>Veterinarians</span>
           </li>
