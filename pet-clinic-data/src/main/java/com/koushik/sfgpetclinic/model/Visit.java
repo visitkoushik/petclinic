@@ -2,12 +2,15 @@ package com.koushik.sfgpetclinic.model;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Visit extends BaseEntity {
     
+    @DateTimeFormat(pattern = "dd-MMM-yy")
     private LocalDate date;
     private String description;
     private Pet pet;
-    
+
     public LocalDate getDate() {
         return date;
     }
