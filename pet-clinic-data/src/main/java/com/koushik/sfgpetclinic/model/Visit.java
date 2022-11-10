@@ -2,13 +2,28 @@ package com.koushik.sfgpetclinic.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
+@Entity
+@Table(name = "visits")
 public class Visit extends BaseEntity {
-    
+
+    @Column(name = "date")
     @DateTimeFormat(pattern = "dd-MMM-yy")
     private LocalDate date;
+
+    @Column(name="description")
     private String description;
+
+    @Column(name="pet")
+    @ManyToOne()
+    @JoinColumn(name="pet_id")
     private Pet pet;
 
     public LocalDate getDate() {
