@@ -81,6 +81,7 @@ public class DataLoader implements CommandLineRunner{
         owner1.setFirstName("Koushik");
         owner1.setLastName("Majumder");
         owner1.getPets().add(petCat);
+        owner1.setAddress("SubhashGram");
         owenerService.save(owner1);
 
         Owner owner2 = new Owner();
@@ -88,6 +89,7 @@ public class DataLoader implements CommandLineRunner{
         owner2.setFirstName("Kuntal");
         owner2.setLastName("Chakraborty");
         owner2.getPets().add(petDog);
+        owner2.setAddress("BijoyGar");
         owenerService.save(owner2);
 
         System.out.println("Loaded Owner");
