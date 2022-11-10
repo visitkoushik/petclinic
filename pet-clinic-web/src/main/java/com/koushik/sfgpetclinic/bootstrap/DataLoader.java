@@ -11,10 +11,12 @@ import com.koushik.sfgpetclinic.model.Pet;
 import com.koushik.sfgpetclinic.model.PetType;
 import com.koushik.sfgpetclinic.model.Speciality;
 import com.koushik.sfgpetclinic.model.Vet;
+import com.koushik.sfgpetclinic.model.Visit;
 import com.koushik.sfgpetclinic.services.OwenerService;
 import com.koushik.sfgpetclinic.services.PetTypeService;
 import com.koushik.sfgpetclinic.services.SpecialityService;
-import com.koushik.sfgpetclinic.services.VetService; 
+import com.koushik.sfgpetclinic.services.VetService;
+import com.koushik.sfgpetclinic.services.VisitService; 
 
 
 @Component
@@ -25,6 +27,7 @@ public class DataLoader implements CommandLineRunner{
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
     /**
      * 
      */
@@ -33,11 +36,13 @@ public class DataLoader implements CommandLineRunner{
         OwenerService owenerService,
         VetService vetService,
         PetTypeService petTypeService,
-        SpecialityService specialityService) {
+        SpecialityService specialityService,
+        VisitService visitService) {
             this.owenerService = owenerService;
             this.vetService = vetService;
             this.petTypeService = petTypeService;
             this.specialityService = specialityService;
+            this.visitService = visitService;
     }
 
 
@@ -76,6 +81,14 @@ public class DataLoader implements CommandLineRunner{
         petDog .setName("BhouBhou");
         petDog.setBirthDay(LocalDate.of(2019, 3, 12));
 
+
+        Visit catVisit = new Visit();
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Snizzy Kitty");
+        catVisit.setPet(petCat);
+
+        visitService.save(catVisit);
+
         Owner owner1 = new Owner();
         // owner1.setId(1L);
         owner1.setFirstName("Koushik");
@@ -110,7 +123,8 @@ public class DataLoader implements CommandLineRunner{
         vet2.getSpecialities().add(surgery);
         vetService.save(vet2);
 
-        System.out.println("Loaded Vet");
+        
+
     }
     
 }
