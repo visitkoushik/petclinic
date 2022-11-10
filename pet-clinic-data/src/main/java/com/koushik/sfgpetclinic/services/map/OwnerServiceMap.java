@@ -1,5 +1,7 @@
 package com.koushik.sfgpetclinic.services.map;
 
+import java.util.Set;
+
 import org.springframework.stereotype.Service;
 
 import com.koushik.sfgpetclinic.model.Owner;
@@ -74,5 +76,10 @@ implements OwenerService{
         return null;
     }
 
+    @Override
+    public Set<Owner> findAll() {
+     
+        return super.findAll();
+    }
 
 }

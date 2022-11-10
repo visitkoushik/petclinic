@@ -1,5 +1,7 @@
 package com.koushik.sfgpetclinic.services.map;
 
+import java.util.Set;
+
 import org.springframework.stereotype.Service;
 
 import com.koushik.sfgpetclinic.model.Speciality;
@@ -27,4 +29,11 @@ implements SpecialityService{
     public void deleteById(Long id) {
         super.deleteById(id);
     }
+
+    @Override
+    public Set<Speciality> findAll() {
+      
+        return super.findAll();
+    }
+
 }

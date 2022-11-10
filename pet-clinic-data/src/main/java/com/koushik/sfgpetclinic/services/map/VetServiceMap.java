@@ -1,5 +1,7 @@
 package com.koushik.sfgpetclinic.services.map;
 
+import java.util.Set;
+
 import org.springframework.stereotype.Service;
 
 import com.koushik.sfgpetclinic.model.Vet; 
@@ -29,6 +31,10 @@ implements VetService{
         super.deleteById(id);
     }
     
-
+    @Override
+    public Set<Vet> findAll() {
+        
+        return super.findAll();
+    }
     
 }
