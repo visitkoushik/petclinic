@@ -2,12 +2,14 @@ package com.koushik.sfgpetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.koushik.sfgpetclinic.model.Speciality;
 import com.koushik.sfgpetclinic.services.SpecialityService;
 
 @Service
+@Profile({"default","map"})
 public class SpecialityMapService extends AbstructMapService<Speciality,Long> 
 implements SpecialityService{
     @Override

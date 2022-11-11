@@ -2,12 +2,14 @@ package com.koushik.sfgpetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.koushik.sfgpetclinic.model.Vet; 
 import com.koushik.sfgpetclinic.services.VetService;
 
 @Service
+@Profile({"default","map"})
 public class VetServiceMap extends AbstructMapService<Vet, Long> 
 implements VetService{
 

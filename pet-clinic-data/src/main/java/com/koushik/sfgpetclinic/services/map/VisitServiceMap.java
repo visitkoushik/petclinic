@@ -4,6 +4,7 @@ package com.koushik.sfgpetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.koushik.sfgpetclinic.model.Visit; 
@@ -11,6 +12,7 @@ import com.koushik.sfgpetclinic.services.VisitService;
 
 
 @Service
+@Profile({"default","map"})
 public class VisitServiceMap extends AbstructMapService<Visit,Long> 
 implements VisitService{
 

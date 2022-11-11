@@ -17,7 +17,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "pets")
 public class Pet extends BaseEntity {
 
-
+   
     @ManyToOne
     @JoinColumn(name = "type_id")
     private PetType petType;
@@ -66,6 +66,27 @@ public class Pet extends BaseEntity {
 
     public void setBirthDay(LocalDate birthDay) {
         this.birthDay = birthDay;
+    }
+
+
+    public Set<Visit> getVisits() {
+        return this.visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Printing Pet:   {" +
+            " petID='" + getId() + "'" +
+            " petType='" + getPetType() + "'" +
+            ", name='" + getName() + "'" +
+            ", birthDay='" + getBirthDay() + "'" +
+            ", visits='" + getVisits() + "'" + 
+            "}";
     }
 
 }

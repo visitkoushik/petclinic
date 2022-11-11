@@ -11,7 +11,8 @@
         <thead>
             <tr>
               
-                <th style="width: 40%;">First Name</th>
+                <th style="width: 10%;">First Name</th>
+                <th style="width: 30%;">First Name</th>
                 <th style="width: 40%">Last Name</th>
                 <th style="width: 20%">Pets</th>
               </tr>
@@ -19,6 +20,7 @@
         <tbody>
             <tr th:each="owner : ${owners}">
                 
+                <td th:text="${owner?.getId()}"/> 
                 <td th:text="${owner?.firstName}"/> 
                 <td th:text="${owner?.lastName}"/>
                 <td><span th:text="${#strings.listJoin(owner?.getAllPetsName(), ', ')}"/></td>

@@ -46,4 +46,13 @@ public class Visit extends BaseEntity {
     }
 
 
+    @Override
+    public String toString() {
+        return "{" +
+            " date='" + getDate() + "'" +
+            ", description='" + getDescription() + "'" +
+           
+            "}";
+    }
+
 }

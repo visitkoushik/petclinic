@@ -13,6 +13,7 @@ import com.koushik.sfgpetclinic.model.Speciality;
 import com.koushik.sfgpetclinic.model.Vet;
 import com.koushik.sfgpetclinic.model.Visit;
 import com.koushik.sfgpetclinic.services.OwenerService;
+import com.koushik.sfgpetclinic.services.PetService;
 import com.koushik.sfgpetclinic.services.PetTypeService;
 import com.koushik.sfgpetclinic.services.SpecialityService;
 import com.koushik.sfgpetclinic.services.VetService;
@@ -72,39 +73,47 @@ public class DataLoader implements CommandLineRunner{
         Speciality surgery = specialityService.save(speciality3);
 
 
-        Pet petCat = new Pet();
-        petCat.setPetType(catPetType);
-        petCat.setName("Mao");
-        petCat.setBirthDay(LocalDate.now());
-        Pet petDog = new Pet();
-        petDog .setPetType(dogPetType);
-        petDog .setName("BhouBhou");
-        petDog.setBirthDay(LocalDate.of(2019, 3, 12));
-
-
-        Visit catVisit = new Visit();
-        catVisit.setDate(LocalDate.now());
-        catVisit.setDescription("Snizzy Kitty");
-        catVisit.setPet(petCat);
-
-        visitService.save(catVisit);
-
+ 
+        
+        
         Owner owner1 = new Owner();
         // owner1.setId(1L);
         owner1.setFirstName("Koushik");
         owner1.setLastName("Majumder");
-        owner1.getPets().add(petCat);
         owner1.setAddress("SubhashGram");
+        
+        Pet petCat = new Pet();
+        petCat.setPetType(catPetType);
+        petCat.setName("Mao");
+        petCat.setOwner(owner1);
+        petCat.setBirthDay(LocalDate.now());
+        owner1.getPets().add(petCat);
         owenerService.save(owner1);
+
 
         Owner owner2 = new Owner();
         // owner2.setId(2L);
         owner2.setFirstName("Kuntal");
         owner2.setLastName("Chakraborty");
-        owner2.getPets().add(petDog);
         owner2.setAddress("BijoyGar");
+        
+        Pet petDog = new Pet();
+        petDog .setPetType(dogPetType);
+        petDog .setName("BhouBhou");
+        petDog.setBirthDay(LocalDate.of(2019, 3, 12));
+        petDog.setOwner(owner2);
+        owner2.getPets().add(petDog);
         owenerService.save(owner2);
 
+        
+        // System.out.println(petCat.toString());
+        Visit catVisit = new Visit();
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Snizzy Kitty");
+        catVisit.setPet(petCat);
+        visitService.save(catVisit);
+        // System.out.println(catVisit.toString());
+        
         System.out.println("Loaded Owner");
 
         Vet vet1 =new Vet();
@@ -123,7 +132,7 @@ public class DataLoader implements CommandLineRunner{
         vet2.getSpecialities().add(surgery);
         vetService.save(vet2);
 
-        
+        System.out.println(owner1);
 
     }
     

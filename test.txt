@@ -1,0 +1,171 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] sfg-pet-clinic                                                     [pom]
+[INFO] pet-clinic-data                                                    [jar]
+[INFO] pet-clinic-web                                                     [jar]
+[INFO] 
+[INFO] ---------------------< com.koushik:sfg-pet-clinic >---------------------
+[INFO] Building sfg-pet-clinic 0.0.3-SNAPSHOT                             [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.7.5:repackage (repackage) @ sfg-pet-clinic ---
+[INFO] 
+[INFO] --------------------< com.koushik:pet-clinic-data >---------------------
+[INFO] Building pet-clinic-data 0.0.3-SNAPSHOT                            [2/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ pet-clinic-data ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ pet-clinic-data ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ pet-clinic-data ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /Users/koushik/Development/sfg-pet-clinic/pet-clinic-data/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ pet-clinic-data ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ pet-clinic-data ---
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ pet-clinic-data ---
+[INFO] Building jar: /Users/koushik/Development/sfg-pet-clinic/pet-clinic-data/target/pet-clinic-data-0.0.3-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.7.5:repackage (repackage) @ pet-clinic-data ---
+[INFO] 
+[INFO] ---------------------< com.koushik:pet-clinic-web >---------------------
+[INFO] Building pet-clinic-web 0.0.3-SNAPSHOT                             [3/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ pet-clinic-web ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 30 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ pet-clinic-web ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /Users/koushik/Development/sfg-pet-clinic/pet-clinic-web/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ pet-clinic-web ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /Users/koushik/Development/sfg-pet-clinic/pet-clinic-web/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ pet-clinic-web ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/koushik/Development/sfg-pet-clinic/pet-clinic-web/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ pet-clinic-web ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.koushik.sfgpetclinic.SfgPetClinicApplicationTests
+12:48:44.949 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+12:48:44.974 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+12:48:45.072 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.koushik.sfgpetclinic.SfgPetClinicApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+12:48:45.095 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.koushik.sfgpetclinic.SfgPetClinicApplicationTests], using SpringBootContextLoader
+12:48:45.100 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.koushik.sfgpetclinic.SfgPetClinicApplicationTests]: class path resource [com/koushik/sfgpetclinic/SfgPetClinicApplicationTests-context.xml] does not exist
+12:48:45.105 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.koushik.sfgpetclinic.SfgPetClinicApplicationTests]: class path resource [com/koushik/sfgpetclinic/SfgPetClinicApplicationTestsContext.groovy] does not exist
+12:48:45.107 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.koushik.sfgpetclinic.SfgPetClinicApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+12:48:45.108 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.koushik.sfgpetclinic.SfgPetClinicApplicationTests]: SfgPetClinicApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:48:45.233 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.koushik.sfgpetclinic.SfgPetClinicApplicationTests]
+12:48:45.367 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/koushik/Development/sfg-pet-clinic/pet-clinic-web/target/classes/com/koushik/sfgpetclinic/SfgPetClinicApplication.class]
+12:48:45.380 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.koushik.sfgpetclinic.SfgPetClinicApplication for test class com.koushik.sfgpetclinic.SfgPetClinicApplicationTests
+12:48:45.499 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.koushik.sfgpetclinic.SfgPetClinicApplicationTests]: using defaults.
+12:48:45.500 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+12:48:45.522 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@125290e5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6fa34d52, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@57576994, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@616ac46a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@67b9b51a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1205bd62, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7ef27d7f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@490caf5f, org.springframework.test.context.event.EventPublishingTestExecutionListener@6337c201, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5c669da8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@31920ade, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1d483de4, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4032d386, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@28d18df5, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@934b6cb]
+12:48:45.526 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@1a72a540 testClass = SfgPetClinicApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@27d5a580 testClass = SfgPetClinicApplicationTests, locations = '{}', classes = '{class com.koushik.sfgpetclinic.SfgPetClinicApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@548e6d58, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@610f7aa, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@2f54a33d, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@11c9af63, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@68e965f5, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@6c3708b3], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+                           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                           @@@@                 @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @                                                  @@ @@@@@@@@@@@@@@@@@@@@
+     .                                                       @@@@@@@@@@@@@@@@@
+              @            @                             @      @@@@@@@@@@@@@@
+      .                                                     @    @ @@@@@@@@@@@
+        .              @                                          @ @@@@@@@@@@
+                                         @                          @@@@@@@@@@
+  :       *o                  @@@@@@@@@@@@@@@@@                     @@@@@@@@@@
+                         @ @@@@@@@@@@@@@@@@@@@ @@@@                  @@@@@@@@@
+          .            @ @@@@@@@@@@@@@@@@@@@@@@@@@                   @@@@@@@@@
+  &  .                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  @@@@@@@@@
+        .            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  @@@@@@@@@
+     . *             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@               @@@@@@@@@@
+        *             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                @@@@@@@@@
+                     @@@@@@@@@@@@@@@     @      @@@@@@@              @@@@@@@@@
+         .        @ @@@@@@@@@@@@@@        @            @            .@@@@@@@@@
+         .                @@@@@@  @@@@@@@@@@@@@ @@@@@@@             @@@@@@@@@@
+                     @          @@@@@         @ @@@@@@@@    @@@@@@@@@@@@@@@@@@
+        :           @@@@@@@  @@@ @@@      @@@@@ @@@@@@@@   @@@@@@@@@@@@@@@@@@@
+        o    @         @ @@  @@@@  @@@@@@@@@@@ @@@@@@@@@    @@@@@@@:@@@@@@@@@@
+                      @@@@  @@@@@@@        @@@@@@@@@@ @@   @@@@@@@@@@@@@@@@@@@
+       .              @@@   @@@@@@@@@@@@@@@@@@@@@@@@@@     @@@@@@@@@@@@@@@@@@@
+       *          @@    @@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@
+  ..   *           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@ @@@@@@@@@@@@@@
+         @@@       @@@@@@ @@@@@@@   @@@@@@@@@@@@@@@@@@     @@@@@@@@@@@@@@@@@@@
+       @@@@@@      @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@     @@@@@@@@@@@@@@@@@@@
+       @@@@@@@     @@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@
+        @@@@@@@      @@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@
+          @@@@@@@    @  @@@  @ @@@@@@ @  @@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@    @@@    @@@@@@@@@@@@@@@@@@@@@@@@     @@@ @@@@@@@@@@@@@@@
+          @@@@@@@@@@   @@@@@@@@@@@@@@ @@@@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@    @  @@     @ @@@@@@@@@@@@@@       @@@@:@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@      @@@@@   @@@@@@@@@@  @@       @@@@@o@@@@@@@@@@@@@@@
+    @ @   @@@@@@@@@@@@@      @ @@@@@@@@@@@@@@ @        @@@@@@@.@@@@@@@@@@@@@@@
+  @@@@@   @@@@@@@@@@@@@@       @@@@@@@@@@@@@  @       @@@@@@@@ @@@@@@@@@@@@@@@
+  @@@@@ @  @@@@@@@@@@@@@@       @@@ @@@ @            @@@@@@@@@@o@@@@@@@@@@@@@@
+  @@   @@@  @@@@@@@@@@@@@@@                      @@@@@@@@@@@@@@ @@@@@@@@@@@@@@
+
+2022-11-11 12:48:51.321  INFO 70882 --- [           main] c.k.s.SfgPetClinicApplicationTests       : Starting SfgPetClinicApplicationTests using Java 19.0.1 on Koushiks-MacBook-Air.local with PID 70882 (started by koushik in /Users/koushik/Development/sfg-pet-clinic/pet-clinic-web)
+2022-11-11 12:48:51.323  INFO 70882 --- [           main] c.k.s.SfgPetClinicApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2022-11-11 12:48:54.452  INFO 70882 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-11 12:48:54.699  INFO 70882 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 220 ms. Found 6 JPA repository interfaces.
+2022-11-11 12:48:56.456  INFO 70882 --- [           main] com.zaxxer.hikari.HikariDataSource       : test  - Starting...
+2022-11-11 12:48:57.211  INFO 70882 --- [           main] com.zaxxer.hikari.HikariDataSource       : test  - Start completed.
+2022-11-11 12:48:57.474  INFO 70882 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-11 12:48:57.588  INFO 70882 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-11 12:48:58.033  INFO 70882 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-11 12:48:58.167  INFO 70882 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-11-11 12:48:59.073  INFO 70882 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-11 12:48:59.083  INFO 70882 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-11 12:48:59.455  WARN 70882 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-11 12:49:00.116  INFO 70882 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-11-11 12:49:01.502  INFO 70882 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-11-11 12:49:01.778  INFO 70882 --- [           main] c.k.s.SfgPetClinicApplicationTests       : Started SfgPetClinicApplicationTests in 16.185 seconds (JVM running for 18.315)
+Loaded Owner
+{ID = 10, FirstName='Koushik' LastName='Majumder' address='SubhashGram', pets='[Printing Pet:   { petID='10' petType='{ id='11' name='Cat'}', name='Mao', birthDay='2022-11-11', visits='[]'}]'}
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.509 s - in com.koushik.sfgpetclinic.SfgPetClinicApplicationTests
+2022-11-11 12:49:02.282  INFO 70882 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-11 12:49:02.283  INFO 70882 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-11-11 12:49:02.483  INFO 70882 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : test  - Shutdown initiated...
+2022-11-11 12:49:02.487  INFO 70882 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : test  - Shutdown completed.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ pet-clinic-web ---
+[INFO] Building jar: /Users/koushik/Development/sfg-pet-clinic/pet-clinic-web/target/pet-clinic-web-0.0.3-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.7.5:repackage (repackage) @ pet-clinic-web ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for sfg-pet-clinic 0.0.3-SNAPSHOT:
+[INFO] 
+[INFO] sfg-pet-clinic ..................................... SUCCESS [  1.128 s]
+[INFO] pet-clinic-data .................................... SUCCESS [  1.777 s]
+[INFO] pet-clinic-web ..................................... SUCCESS [ 24.025 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  27.580 s
+[INFO] Finished at: 2022-11-11T12:49:03+05:30
+[INFO] ------------------------------------------------------------------------

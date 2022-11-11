@@ -41,10 +41,18 @@ public class Owner extends Person {
 
     public void setAddress(String address) {
         this.address = address;
+    } 
+
+    @Override
+    public String toString() {
+        return "{" +
+            "ID = "+getId()+","+
+            " FirstName='" + getFirstName() + "'" +
+            " LastName='" + getLastName() + "'" +
+            " address='" + getAddress() + "'" +
+            ", pets='" + getPets() + "'" +
+            "}";
     }
-    public void setPets(Set<Pet> pets) {
-        this.pets = pets;
-    }
-    
-    
+
+
 }

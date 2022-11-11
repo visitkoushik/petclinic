@@ -2,6 +2,7 @@ package com.koushik.sfgpetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.koushik.sfgpetclinic.model.Owner;
@@ -12,6 +13,7 @@ import com.koushik.sfgpetclinic.services.PetTypeService;
 
 
 @Service
+@Profile({"default","map"})
 public class OwnerServiceMap extends AbstructMapService<Owner, Long> 
 implements OwenerService{
 
@@ -38,16 +40,16 @@ implements OwenerService{
         if(owner!=null){
             if(owner.getPets()!=null){
                 owner.getPets().forEach(pet->{
-                    if(pet.getId()!=null){
-                        Pet savedpet = petService.save(pet);
-                        pet.setId(savedpet.getId());
+                    if(pet.getId() == null){
+                        Pet savedPet = petService.save(pet);
+                        pet.setId(savedPet.getId());
                     }
-                    if(pet.getPetType()!=null){
-                        if(pet.getPetType().getId()!=null){
+                    if (pet.getPetType() != null){
+                        if(pet.getPetType().getId() == null){
                             pet.setPetType(petTypeService.save(pet.getPetType()));
                         }
-                    }else{
-                        throw new RuntimeException("Pet type missing");
+                    } else {
+                        throw new RuntimeException("Pet Type is required");
                     }
 
                     
