@@ -12,6 +12,19 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Setter
+@Getter
+@NoArgsConstructor
+// @AllArgsConstructor
+// @Builder
+
 @Entity
 @Table(name = "owners")
 public class Owner extends Person {
@@ -21,10 +34,14 @@ public class Owner extends Person {
     @OneToMany(cascade = CascadeType.ALL,mappedBy ="owner" )
     private Set<Pet> pets=new HashSet<>();
 
-    public Set<Pet> getPets() {
-        return pets;
-    }
 
+    @Builder
+    public Owner(Long id,String firstName,String lastName,String address) {
+        super(id,firstName,lastName);
+        this.address = address;
+        // this.pets = pets;
+    }
+     
     public List<String> getAllPetsName(){
         List<String> aList = new ArrayList<String>(pets.size());
 
@@ -35,14 +52,7 @@ public class Owner extends Person {
         return aList;
     }
 
-    public String getAddress() {
-        return this.address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    } 
-
+   
     @Override
     public String toString() {
         return "{" +
